@@ -36,9 +36,7 @@ def main():
     pool.join()
 
     print("Merging the strings")
-    stringToWrite=""
-    for item in strings:
-        stringToWrite += item+"\n"
+    stringToWrite="\n".join(strings)
         
     print("Writing to file.")
     f = open(outFile,"w+")
