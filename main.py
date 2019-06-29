@@ -26,8 +26,10 @@ def main():
     for signals_ in signalss:
         if signals_ is not None:
             signals += signals_
+    
+    print("\n{} signals found.".format(len(signals)))
 
-    print("\nConverting list to string")
+    print("Converting list to string")
     pool = Pool( cpu_count() )
     strings = pool.map( signalListToString , signals )
     pool.close()
@@ -38,6 +40,7 @@ def main():
     for item in strings:
         stringToWrite += item+"\n"
         
+    print("Writing to file.")
     f = open(outFile,"w+")
     f.write(stringToWrite)
     f.close()
