@@ -1,12 +1,12 @@
 import wfdb
 
-def plotBeat( recId, point, width=75):
+def plotBeat( recId, point, width=50):
     sampfrom = point-width
     sampto = point+width
     r,s,a = getRecSampAnn(str(recId) , sampfrom=sampfrom,sampto=sampto)
     plotRec(recId,sampfrom,sampto) 
 
-def getVoltages( recId,point,symbol,width=75):
+def getVoltages( recId,point,symbol,width=50):
     sampfrom = point-width
     sampto = point+width
     try:
