@@ -15,11 +15,11 @@ def getVoltages( recId,point,symbol,width=75):
         return None
     signal = r.p_signal
     channelCount = len(signal[0])
-    signals = [ [symbol] ]*channelCount 
+    signals = [ [symbol] for i in range(channelCount) ]
     for item in signal:
         for i in range(channelCount):
             signals[i].append(item[i])
-    return signals 
+    return signals
 
 def signalListToString(sig):
     stringBuffer  = ""
